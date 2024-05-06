@@ -26,6 +26,28 @@ header img {
     padding-right: 50px;
 }
 
+.content section {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.selling-main {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.selling-main__container {
+    display: flex;
+    align-items: center;
+}
+
+.selling-main__container-pizza {
+    position: relative;
+    left: 100px;
+}
+
 @media (max-width: 470px) {
     header h1 {
         visibility: hidden;
