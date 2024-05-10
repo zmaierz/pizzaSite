@@ -1,0 +1,40 @@
+@media (max-width: 470px) {
+    header h1 {
+        visibility: hidden;
+    }
+    .header__contacts-container {
+        padding: 10px;
+        font-size: 13px;
+    }
+    .selling-main {
+        left: 0;
+        right: 0;
+
+    }
+    .selling-main__img-background {
+        visibility: hidden;
+    }
+    .selling-main__container {
+        right: 0;
+    }
+    .selling-main__container-pizza {
+        left: 250px;
+        position: relative;
+    }
+    .selling-main__container-pizza img {
+        height: 430px;
+    }
+    .selling-main__container-text {
+        left: 0;
+        height: auto;
+    }
+    .product-offers {
+        height: 1400px;
+    }
+    .product-offers__container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+}

@@ -111,43 +111,38 @@ header img {
     font-size: 14px;
 }
 
-@media (max-width: 470px) {
-    header h1 {
-        visibility: hidden;
-    }
-    .header__contacts-container {
-        padding: 10px;
-        font-size: 13px;
-    }
-    .selling-main {
-        left: 0;
-        right: 0;
+.limited-promotion__container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
 
-    }
-    .selling-main__img-background {
-        visibility: hidden;
-    }
-    .selling-main__container {
-        right: 0;
-    }
-    .selling-main__container-pizza {
-        left: 250px;
-        position: relative;
-    }
-    .selling-main__container-pizza img {
-        height: 430px;
-    }
-    .selling-main__container-text {
-        left: 0;
-        height: auto;
-    }
-    .product-offers {
-        height: 1400px;
-    }
-    .product-offers__container {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-    }
+.limited-promotion__container-text {
+    left: 150px;
+    position: relative;
+}
+
+.limited-promotion__container-text h1 {
+    margin-bottom: 60px;
+}
+
+.limited-promotion__container-text-general {
+    width: 320px;
+    margin: 0 300px 25px -25px;
+    background: #d5d2d2;
+    border: solid black 1.5px;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.limited-promotion__container-text-general span {
+    margin: 5px 5px 5px 5px;
+}
+
+.limited-promotion__container-timer {
+    color: red;
+    font-size: 30px;
+    right: 35px;
+    position: relative;
 }
