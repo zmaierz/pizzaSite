@@ -135,4 +135,15 @@
         flex-wrap: nowrap;
         align-items: center;
     }
+    .feedback {
+        height: 775px;
+    }
+    .feedback__container {
+        display: flex;
+        flex-direction: column;
+    }
+    .feedback__container-form-container, .feedback-contacts__container {
+        width: 300px;
+        margin: 10px 0 10px 0;
+    }
 }
