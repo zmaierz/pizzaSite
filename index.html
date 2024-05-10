@@ -213,19 +213,27 @@
                     <div class="feedback__container-form-container">
                         <h2>Оставьте заявку</h2>
                         <form class="feedback-form" id="feedback-form">
-                            <span>Ваше имя:</span> <input type="text"> <br>
-                            <span> Ваш телефон: </span> <input type="text"> <br>
-                            <span> Удобное время для звонка: </span> <input type="time"> <br>
-                            <input type="submit">
+                            <span>Ваше имя:</span> <input type="text" id="userName"> <br>
+                            <span> Ваш телефон: </span> <input type="text" id="userPhone"> <br>
+                            <span> Удобное время для звонка: </span> <input type="time" id="userTime"> <br>
+                            <input type="submit" onclick="stopUpdate()">
                         </form>
                     </div>
                     <script>
+                        function stopUpdate() {
+                            preventDefault();
+                        }
                         $("#feedback-form").on("submit", function() {
+                            preventDefault();
                             $.ajax({
                                 url: 'ajax.php',
                                 method: 'post',
-                                dataType: 'json',
-                                data: {text: 'Текст'},
+                                dataType: 'html',
+                                data: {
+                                    name: document.getElementById("#userName").value,
+                                    phone: document.getElementById("#userPhone").value,
+                                    time: document.getElementById("#userTime").value
+                                },
                                 success: function(data) {
                                     alert(data.text);
                                     alert(data.error);

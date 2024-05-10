@@ -1,2 +1,3 @@
-<?
-echo "123";
+<?php
+print_r($_POST);
+?>
