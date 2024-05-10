@@ -185,3 +185,7 @@ header img {
   .next-button {
     right: 10px;
   }
+
+  .advantages__container-mobile {
+    display: none;
+  }
