@@ -153,20 +153,19 @@ header img {
     height: 400px;
     margin: 0 auto 50px auto;
     overflow: hidden;
-  }
+}
   
   .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-  }
-  
-  .slider img {
+}
+
+.slider img {
     width: 100%;
     object-fit: cover;
-  }
+}
   
-  .prev-button,
-  .next-button {
+.prev-button, .next-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -176,16 +175,20 @@ header img {
     border: none;
     font-size: 24px;
     color: white;
-  }
-  
-  .prev-button {
-    left: 10px;
-  }
-  
-  .next-button {
-    right: 10px;
-  }
+}
 
-  .advantages__container-mobile {
+.prev-button {
+    left: 10px;
+}
+  
+.next-button {
+    right: 10px;
+}
+
+.advantages__container-mobile {
     display: none;
-  }
+}
+.advantages__addiction {
+    text-align: center;
+    margin-bottom: 20px;
+}
