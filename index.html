@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/script.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/style-mobile.css">
         <title>Pizza site</title>
@@ -159,10 +159,102 @@
                 </div>
             </section>
             <section class="reviews">
-                Отзывы
+                <h1>А вот, что про нас говорят:</h1>
+                <div class="reviews__container">
+                    <div class="review">
+                        <div class="review__logo">
+                            <img src="images/reviews/1.png">
+                        </div>
+                        <div class="product-offer__text-container">
+                            <div class="review__text-container-main">
+                                "Очарованы атмосферой и качеством пиццы! Один из<br>
+                                лучших ресторанов итальянской кухни, который я посещал."
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review__logo">
+                            <img src="images/reviews/2.png">
+                        </div>
+                        <div class="product-offer__text-container">
+                            <div class="review__text-container-main">
+                                "Пицца была просто великолепной! Сочные ингредиенты,<br>
+                                хрустящее тесто и великолепный сервис. Обязательно вернемся снова!"
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review__logo">
+                            <img src="images/reviews/3.png">
+                        </div>
+                        <div class="product-offer__text-container">
+                            <div class="review__text-container-main">
+                                "Уютная атмосфера, прекрасное обслуживание и вкуснейшая пицца!<br>
+                                Настоятельно рекомендую всем любителям итальянской кухни."
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review__logo">
+                            <img src="images/reviews/4.png">
+                        </div>
+                        <div class="product-offer__text-container">
+                            <div class="review__text-container-main">
+                                "Это место просто чудо! Великолепная аутентичная пицца,<br>
+                                внимательный персонал и идеальное место для уютного ужина с семьей."
+                                
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="feedback">
-                Обратная связь
+                <h1> Остался последний шаг </h1>
+                <div class="feedback__container">
+                    <div class="feedback__container-form-container">
+                        <h2>Оставьте заявку</h2>
+                        <form class="feedback-form" id="feedback-form">
+                            <span>Ваше имя:</span> <input type="text" id="userName"> <br>
+                            <span> Ваш телефон: </span> <input type="text" id="userPhone"> <br>
+                            <span> Удобное время для звонка: </span> <input type="time" id="userTime"> <br>
+                            <input type="submit" onclick="stopUpdate()">
+                        </form>
+                    </div>
+                    <script>
+                        function stopUpdate() {
+                            preventDefault();
+                        }
+                        $("#feedback-form").on("submit", function() {
+                            preventDefault();
+                            $.ajax({
+                                url: 'ajax.php',
+                                method: 'post',
+                                dataType: 'html',
+                                data: {
+                                    name: document.getElementById("#userName").value,
+                                    phone: document.getElementById("#userPhone").value,
+                                    time: document.getElementById("#userTime").value
+                                },
+                                success: function(data) {
+                                    alert(data.text);
+                                    alert(data.error);
+                                }
+                            });
+                            return false;
+                        });
+                    </script>
+                    <div class="feedback-contacts__container">
+                        <h2>Или свяжитесь с нами:</h2>
+                        <div class="feedback-contacts__container-info">
+                            <div class="feedback-contacts__container-info-phone">
+                                Телефон: <a href="phone:88000008800">8 (800) 000-88-00</a>
+                            </div>
+                            <div class="feedback-contacts__container-info-email">
+                                E-Mail: <a href="mailto:info@truesky.space">info@truesky.space</a>
+                            </div>
+                            Адрес: Россия, г. Хабаровск, ул. Пушкина, д. Колотушкина, офис 1.
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
         <script src="js/slider.js"></script>
