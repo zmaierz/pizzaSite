@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/script.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/style-mobile.css">
         <title>Pizza site</title>
@@ -212,13 +212,28 @@
                 <div class="feedback__container">
                     <div class="feedback__container-form-container">
                         <h2>Оставьте заявку</h2>
-                        <form class="feedback-form">
+                        <form class="feedback-form" id="feedback-form">
                             <span>Ваше имя:</span> <input type="text"> <br>
                             <span> Ваш телефон: </span> <input type="text"> <br>
                             <span> Удобное время для звонка: </span> <input type="time"> <br>
                             <input type="submit">
                         </form>
                     </div>
+                    <script>
+                        $("#feedback-form").on("submit", function() {
+                            $.ajax({
+                                url: 'ajax.php',
+                                method: 'post',
+                                dataType: 'json',
+                                data: {text: 'Текст'},
+                                success: function(data) {
+                                    alert(data.text);
+                                    alert(data.error);
+                                }
+                            });
+                            return false;
+                        });
+                    </script>
                     <div class="feedback-contacts__container">
                         <h2>Или свяжитесь с нами:</h2>
                         <div class="feedback-contacts__container-info">
